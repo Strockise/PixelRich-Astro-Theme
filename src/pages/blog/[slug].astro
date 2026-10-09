@@ -1,0 +1,50 @@
+---
+import { render } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import BlogList from '@/layouts/components/BlogList.astro';
+import { getPosts } from '@/lib/content';
+import { HIDDEN_BELOW } from '@/lib/ix';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    // "Related Blog": the two newest other articles, as in the original template.
+    props: { post, related: posts.filter((other) => other.id !== post.id).slice(0, 2) },
+  }));
+}
+
+const { post, related } = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+---
+
+<Base wfPage="6ac88618bf614c70ada7f1cd" title={data.title} fullTitle description={data.metaDescription} image={data.thumbnail.src} type="article">
+  <div class="main-wrapper">
+    <section class="blog-details-section">
+      <div class="blog-section-gap">
+        <div class="w-layout-blockcontainer container-default w-container">
+          <div class="blog-wrapper">
+            <div class="blog-content-block">
+              <div data-w-id="241055f7-b513-c19b-d016-e30dbdb5bb4b" style={HIDDEN_BELOW} class="blog-details-title-block">
+                <h1 class="blog-details-title">{data.title}</h1>
+              </div>
+              <div class="blog-details-block">
+                <div data-w-id="d45fb365-5c5c-3fef-8a1c-f4ec771e7506" style={HIDDEN_BELOW} class="blog-details-image-block"><img src={data.thumbnail.src} loading="lazy" alt={data.thumbnail.alt} sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset={data.thumbnail.srcset} class="blog-details-image"></div>
+                <div data-w-id="f16eee5d-28bf-00e3-146f-3a7c078cc461" style={HIDDEN_BELOW} class="blog-details-text-block">
+                  <div class="blog-details-text w-richtext"><Content /></div>
+                </div>
+              </div>
+              <div class="reletade-blog-block">
+                <div class="reletade-blog-title-block">
+                  <h2 data-w-id="ee783d1d-32e8-107e-9da4-ba6c2fe7f973" style={HIDDEN_BELOW} class="reletade-blog-title">Related Blog</h2>
+                </div>
+                <BlogList posts={related} itemId="935df420-ae54-0655-cbad-899c15bfdc32" related />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

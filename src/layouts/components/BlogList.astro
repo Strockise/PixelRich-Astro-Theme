@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, postUrl } from '@/lib/content';
+import { HIDDEN_BELOW } from '@/lib/ix';
+
+interface Props {
+  posts: CollectionEntry<'blogPosts'>[];
+  /** Webflow interaction ID of each card (fade-up on scroll). */
+  itemId: string;
+  /** Compact cards of the "Related Blog" section on the article page. */
+  related?: boolean;
+}
+
+const { posts, itemId, related = false } = Astro.props;
+const is2 = related ? ' is-2' : '';
+const sm = related ? ' sm' : '';
+const Title = related ? 'h3' : 'h2';
+const sizes = '(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px';
+---
+
+<div class="blog-collection-list-block w-dyn-list">
+  {posts.length > 0 ? (
+    <div role="list" class={`blog-collection-list${is2} w-dyn-items`}>
+      {posts.map(({ data }) => (
+        <div role="listitem" class="blog-collection-item w-dyn-item">
+          <div data-w-id={itemId} style={HIDDEN_BELOW} class="blog-item-block">
+            <a aria-label={data.title} href={postUrl(data.slug)} class="blog-item-image-block w-inline-block"><img src={data.thumbnail.src} loading="lazy" alt={data.thumbnail.alt || (related ? '' : 'Blog Item Image')} sizes={sizes} srcset={data.thumbnail.srcset} class={`blog-item-image${is2}`}></a>
+            <div class="blog-item-content-block">
+              <div class={`blog-item-info-block${is2}`}>
+                <div class="blog-single-info-block">
+                  <p class={`blog-info-text${sm}`}>{formatDate(data.date)}</p>
+                </div>
+                <div class={`blog-info-dot${sm}`}></div>
+                <div class="blog-single-info-block">
+                  <p class={`blog-info-text${sm}`}>{data.readTime}</p>
+                </div>
+              </div>
+              <a aria-label={data.title} href={postUrl(data.slug)} class={`blog-item-title-block${is2} w-inline-block`}>
+                <Title class="blog-item-title">{data.title}</Title>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div class="w-dyn-empty">
+      <div>No items found.</div>
+    </div>
+  )}
+</div>

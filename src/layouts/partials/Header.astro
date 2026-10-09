@@ -1,0 +1,89 @@
+---
+import config from '@/config/config.json';
+import menu from '@/config/menu.json';
+import { isCurrent, resolveMenuUrl } from '@/lib/content';
+
+interface Props {
+  /** 1: transparent header over the home hero, 2: header used on inner pages. */
+  variant: 1 | 2;
+}
+
+const { variant } = Astro.props;
+const { pathname } = Astro.url;
+const { site } = config;
+
+// Webflow component variant class, added to the elements it restyles.
+const v = variant === 2 ? 'w-variant-95e8f6d1-9124-f392-3ce1-e380e39f6c57' : '';
+const cls = (...names: string[]) => names.filter(Boolean).join(' ');
+const current = (url: string) => (isCurrent(url, pathname) ? { 'aria-current': 'page' as const } : {});
+const currentClass = (url: string) => (isCurrent(url, pathname) ? 'w--current' : '');
+
+const groups = await Promise.all(
+  menu.dropdown.groups.map(async (group) => ({
+    ...group,
+    links: await Promise.all(group.links.map(async (link) => ({ ...link, url: await resolveMenuUrl(link.url) }))),
+  })),
+);
+---
+
+<header data-wf--header--variant={`varient-${variant}`} class="header">
+  <div class="w-layout-blockcontainer container-default w-container">
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+      <div class="nav-contents-wrapper">
+        <a href="/" {...current('/')} aria-label={`${site.title} home`} class={cls('brand-logo-block w-nav-brand', currentClass('/'))}><img loading="lazy" src={site.logo} alt="" class={cls('brand-logo v1', v)}><img loading="lazy" src={site.logo_alt} alt="" class={cls('brand-logo v2', v)}></a>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+          {menu.main.map((link) => (
+            <a href={link.url} {...current(link.url)} class={cls('nav-link', v, 'w-nav-link', currentClass(link.url))}>{link.name}</a>
+          ))}
+          <div data-delay="500" data-hover="false" data-w-id="a878a1ad-f7dd-97e0-4b70-4a9e60b24387" class={cls('nav-link', v, 'w-dropdown')}>
+            <div class={cls('dropdown-toggle', v, 'w-dropdown-toggle')}>
+              <div class="nav-link-text">{menu.dropdown.name}</div>
+              <div aria-hidden="true" class="dropdown-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                  <path d="M0.941406 1.00008L6.23431 6.29297C6.56761 6.62631 6.73431 6.79297 6.94141 6.79297C7.14851 6.79297 7.31521 6.62631 7.64851 6.29297L12.9414 1.00008" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <nav class="nav-dropdown-list is-pages w-dropdown-list">
+              <div class="dropdown-main">
+                <div class="dropdown-menu-wrapper">
+                  <div class="drop-down-menu-block">
+                    {groups.map((group) => (
+                      <div class="dropdown-link-single-block">
+                        <div class="dropdown-inner-header-block">
+                          <div class="nav-menu-title">{group.title}</div>
+                          <div class="nav-dropdown-liner"></div>
+                        </div>
+                        <div class="dropdown-links-block">
+                          {group.links.map((link) => (
+                            <a href={link.url} {...current(link.url)} class={cls('nav-dropdown-link w-dropdown-link', currentClass(link.url))}>{link.name}</a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <a href={menu.cta.url} class={cls('primary-button', v, 'mobile-show w-inline-block')}>
+            <p class="button-text">{menu.cta.name}</p>
+          </a>
+        </nav>
+        <div class="nav-buttons-block">
+          <div class={cls('nav-button-block v1', v)}>
+            <a href={menu.cta.url} class="primary-button w-inline-block">
+              <p class="button-text">{menu.cta.name}</p>
+            </a>
+          </div>
+          <div class={cls('nav-button-block v2', v)}>
+            <a href={menu.cta.url} class="secondary-button w-inline-block">
+              <p class="button-text">{menu.cta.name}</p>
+            </a>
+          </div>
+          <div class={cls('menu-button', v, 'w-nav-button')}>
+            <div class="menu-button-icon w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

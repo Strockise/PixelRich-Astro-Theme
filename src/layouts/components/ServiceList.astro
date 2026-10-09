@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { serviceUrl } from '@/lib/content';
+
+interface Props {
+  services: CollectionEntry<'services'>[];
+  /** Webflow interaction ID of the card image block (image fan-out on hover). */
+  imageBlockId: string;
+}
+
+const { services, imageBlockId } = Astro.props;
+---
+
+<div class="service-collection-list-block w-dyn-list">
+  {services.length > 0 ? (
+    <div role="list" class="service-collection-list w-dyn-items">
+      {services.map(({ data }) => (
+        <div role="listitem" class="service-collection-item w-dyn-item">
+          <div class="service-card-item-block">
+            <a href={serviceUrl(data.slug)} class="service-card-link-block w-inline-block">
+              <div class="service-card-heading-block">
+                <div class="service-card-title-block">
+                  <h3 class="service-card-title">{data.title}</h3>
+                </div>
+              </div>
+              <div data-w-id={imageBlockId} class="service-card-image-block">
+                {[data.imageOne, data.imageTwo, data.imageThree].map((image, index) => (
+                  <div class={`service-card-single-image-block is-${index + 1}`}><img src={image.src} loading="lazy" alt={image.alt || 'Service Card Image'} class="service-card-image"></div>
+                ))}
+              </div>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div class="w-dyn-empty">
+      <div>No items found.</div>
+    </div>
+  )}
+</div>

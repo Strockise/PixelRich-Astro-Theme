@@ -1,0 +1,103 @@
+---
+import config from '@/config/config.json';
+import social from '@/config/social.json';
+import Base from '@/layouts/Base.astro';
+import { HIDDEN_BELOW } from '@/lib/ix';
+
+// Webflow interaction IDs of the social links (fade-up on scroll), in display order.
+const socialIds = [
+  'ff882c15-bea0-d731-28ef-30a61c0c5787',
+  'd9eaa893-1ccd-0ca5-31f7-9a0e539c2830',
+  '22eb03c1-f734-5f08-4ff6-e6e1f32d5223',
+  '2d36f82b-ffc0-2083-758a-d1f17c3aad32',
+];
+const { action, method } = config.contact_form;
+---
+
+<Base wfPage="6ac88618bf614c70ada7f1ce" title="Contact">
+  <div class="main-wrapper">
+    <section class="contact-section">
+      <div class="contact-section-gap">
+        <div class="w-layout-blockcontainer container-sm w-container">
+          <div class="contact-wrapper">
+            <div class="contact-heading-block">
+              <h1 class="page-intro">Have a project inmind? Let&#x27;s talk!</h1>
+              <div class="text-overlay white"></div>
+            </div>
+            <div class="contact-content-block">
+              <div class="contact-form-block w-form">
+                <form id="email-form" name="email-form" data-name="Email Form" action={action || '#'} method={method} class="contact-form-inner-block" data-contact-form={action ? 'remote' : 'demo'}>
+                  <div data-w-id="cc8cee1b-be66-951d-6b05-f331b75a6485" style={HIDDEN_BELOW} class="contact-form-row-block">
+                    <div class="form-field-block"><label for="name" class="form-field-label">Name</label><input class="form-text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter your name" type="text" id="name" required=""></div>
+                    <div class="form-field-block"><label for="Email" class="form-field-label">Email</label><input class="form-text-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Enter your email" type="email" id="Email" required=""></div>
+                    <div class="form-field-block"><label for="field" class="form-field-label">Name</label><textarea placeholder="Enter your massage" maxlength="5000" id="field" name="field" data-name="Field" class="form-text-field lg w-input"></textarea></div>
+                    <div><input type="submit" data-wait="Please wait..." class="form-button w-button" value="Send"></div>
+                  </div>
+                </form>
+                <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
+                  <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="error-message w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
+                  <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+              <div class="social-media-block">
+                {social.main.map((item, index) => (
+                  <a data-w-id={socialIds[index]} style={socialIds[index] ? HIDDEN_BELOW : undefined} href={item.url} target={item.url.startsWith('http') ? '_blank' : undefined} rel={item.url.startsWith('http') ? 'noopener' : undefined} class="single-social-media-block w-inline-block">
+                    <div class="social-media-number">{String(index + 1).padStart(2, '0')}</div>
+                    <p class="social-media-name">{item.name}</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Mirrors Webflow's form behaviour: the form is replaced by the success
+  // message, or the error message is shown below it.
+  // - "remote": posts to config.json `contact_form.action` (Formspree, Basin, your API, ...).
+  // - "demo": no endpoint configured yet, so the success state is shown without sending.
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  const wrapper = form?.closest('.w-form');
+  const done = wrapper?.querySelector<HTMLElement>('.w-form-done');
+  const fail = wrapper?.querySelector<HTMLElement>('.w-form-fail');
+  const button = form?.querySelector<HTMLInputElement>('input[type="submit"]');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form || !done || !fail || !button) return;
+    const label = button.value;
+    button.value = button.dataset.wait ?? label;
+    button.disabled = true;
+    fail.style.display = 'none';
+    let ok = true;
+    if (form.dataset.contactForm === 'remote') {
+      try {
+        const res = await fetch(form.action, {
+          method: form.method.toUpperCase(),
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        ok = res.ok;
+      } catch {
+        ok = false;
+      }
+    }
+    button.value = label;
+    button.disabled = false;
+    if (ok) {
+      form.reset();
+      form.style.display = 'none';
+      done.style.display = 'block';
+      done.focus();
+    } else {
+      fail.style.display = 'block';
+      fail.focus();
+    }
+  });
+</script>

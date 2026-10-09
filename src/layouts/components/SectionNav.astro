@@ -1,0 +1,34 @@
+---
+import menu from '@/config/menu.json';
+import { isCurrent } from '@/lib/content';
+import { HIDDEN_BELOW } from '@/lib/ix';
+
+interface Props {
+  /**
+   * Webflow interaction IDs of the 2nd–4th links (they slide in on scroll).
+   * Each section that shows this navigation has its own IDs.
+   */
+  ids: [string, string, string];
+}
+
+const { ids } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<div class="section-navigate-block">
+  {menu.section_nav.map((link, index) => {
+    const active = isCurrent(link.url, pathname);
+    const ariaCurrent = active ? ('page' as const) : undefined;
+    const animated = index > 0 ? { 'data-w-id': ids[index - 1], style: HIDDEN_BELOW } : {};
+    return (
+      <div {...animated} class={`section-navlink-block is-${index + 1}`}>
+        <div class="section-navlink-content">
+          <a aria-label={link.name} href={link.url} aria-current={ariaCurrent} class={`section-navlink-number is-1${active ? ' w--current' : ''}`}>{link.number}</a>
+          <div class="section-navlink-number is-2">{link.number}</div>
+          <p class="section-navlink-text">{link.name}</p>
+        </div>
+        <a aria-label={link.name} href={link.url} aria-current={ariaCurrent} class={`section-nav-link w-inline-block${active ? ' w--current' : ''}`}></a>
+      </div>
+    );
+  })}
+</div>

@@ -1,0 +1,18 @@
+---
+import { HIDDEN_BELOW } from '@/lib/ix';
+
+interface Props {
+  /** Webflow interaction ID (fade-up on scroll), different on each page. */
+  id: string;
+}
+
+const { id } = Astro.props;
+const logos = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/images/Sponsor-Logo-${n}.svg`);
+---
+
+<div data-w-id={id} style={HIDDEN_BELOW} class="sponsor-logo-block">
+  {[0, 1].map(() => (
+    <div class="sponsor-logo-row">{logos.map((src) => <img src={src} loading="lazy" alt="Sponsor Logo" class="sponsor-logo">)}</div>
+  ))}
+  <div class="sponsor-logo-overlay"></div>
+</div>

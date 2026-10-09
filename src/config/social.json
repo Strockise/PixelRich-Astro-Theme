@@ -1,0 +1,8 @@
+{
+  "main": [
+    { "name": "Email", "url": "mailto:info@example.com" },
+    { "name": "Facebook", "url": "https://www.facebook.com/" },
+    { "name": "Twitter", "url": "https://x.com/" },
+    { "name": "LinkedIn", "url": "https://linkedin.com/" }
+  ]
+}

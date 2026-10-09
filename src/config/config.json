@@ -1,0 +1,28 @@
+{
+  "site": {
+    "title": "PixelRich",
+    "tagline": "Digital Marketing Agency Astro Theme",
+    "title_suffix": "PixelRich Astro Theme",
+    "base_url": "https://example.com",
+    "lang": "en",
+    "logo": "/images/Nav-Logo-V1.svg",
+    "logo_alt": "/images/Nav-Logo-V2.svg",
+    "footer_logo": "/images/PixelReach-Footer-Logo.svg",
+    "favicon": "/images/favicon.png",
+    "favicon_dark": "/images/favicon-dark.png",
+    "webclip": "/images/webclip.png"
+  },
+  "metadata": {
+    "meta_author": "Example Studio",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Grow your business with data-driven digital marketing solutions that attract customers, strengthen your brand, and deliver consistent growth."
+  },
+  "contact_form": {
+    "action": "",
+    "method": "post"
+  },
+  "footer": {
+    "powered_by_label": "Astro",
+    "powered_by_url": "https://astro.build/"
+  }
+}

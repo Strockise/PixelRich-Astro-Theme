@@ -1,0 +1,31 @@
+---
+import Base from '@/layouts/Base.astro';
+import SectionNav from '@/layouts/components/SectionNav.astro';
+import BlogList from '@/layouts/components/BlogList.astro';
+import { getPosts } from '@/lib/content';
+
+const posts = await getPosts();
+---
+
+<Base wfPage="6ac88618bf614c70ada7f1cc" title="Blog">
+  <div class="main-wrapper">
+    <section class="blog-section">
+      <div class="blog-section-gap">
+        <div class="w-layout-blockcontainer container-fluid w-container">
+          <div class="blog-wrapper padding">
+            <SectionNav ids={["f29a6ee1-d53e-03b4-1317-2280807513d9","f29a6ee1-d53e-03b4-1317-2280807513e2","f29a6ee1-d53e-03b4-1317-2280807513eb"]} />
+            <div class="blog-content-block">
+              <div class="blog-title-block">
+                <h2 class="blog-title">Creative Strategy Real Business Results.</h2>
+                <div class="text-overlay white"></div>
+              </div>
+              <div class="blog-card-block">
+                <BlogList posts={posts} itemId="cd664752-afde-6657-e7bf-6a21fd2a5f30" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

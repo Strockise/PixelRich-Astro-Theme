@@ -1,0 +1,532 @@
+---
+import Base from '@/layouts/Base.astro';
+import Header from '@/layouts/partials/Header.astro';
+import SectionNav from '@/layouts/components/SectionNav.astro';
+import SponsorLogos from '@/layouts/components/SponsorLogos.astro';
+import ServiceList from '@/layouts/components/ServiceList.astro';
+import { getServices } from '@/lib/content';
+
+const services = (await getServices()).slice(0, 4);
+---
+
+<Base wfPage="6ac88618bf614c70ada7f1c7" header={false}>
+  <main class="main-wrapper">
+        <section class="hero-section">
+          <Header variant={1} />
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div data-w-id="07160d65-d9dd-ca78-eac4-8c822c6a2d0f" class="hero-wrapper">
+              <div class="hero-text-block">
+                <h1 class="page-intro text-white is-1">Elevate Your Brand</h1>
+                <div class="page-intro-overlay is-1"></div>
+                <div class="page-intro-overlay is-2"></div>
+                <div class="page-intro-overlay is-3"></div>
+                <div class="page-intro-overlay is-4"></div>
+                <div class="page-intro-overlay is-5"></div>
+              </div>
+              <div class="hero-image-block">
+                <div class="hero-image-one-block">
+                  <div class="hero-image-one-inner-block"><img src="/images/Hero-Image-1-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Hero-Image-1-min-p-500.jpg 500w, /images/Hero-Image-1-min-p-800.jpg 800w, /images/Hero-Image-1-min.jpg 960w" alt="Hero Image" class="hero-image"></div>
+                </div>
+                <div class="hero-image-two-block">
+                  <div class="hero-image-two-inner-block"><img src="/images/Hero-Image-3-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Hero-Image-3-min-p-500.jpg 500w, /images/Hero-Image-3-min-p-800.jpg 800w, /images/Hero-Image-3-min.jpg 960w" alt="Hero Image" class="hero-image is-2"></div>
+                </div>
+                <div class="hero-image-three-block">
+                  <div class="hero-image-three-inner-block"><img src="/images/Hero-Image-3-1.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Hero-Image-3-1-p-500.jpg 500w, /images/Hero-Image-3-1-p-800.jpg 800w, /images/Hero-Image-3-1.jpg 960w" alt="Hero Image" class="hero-image is-3"></div>
+                </div>
+                <div class="hero-image-four-block">
+                  <div class="hero-image-four-inner-block"><img src="/images/Hero-Image-1-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Hero-Image-1-min-p-500.jpg 500w, /images/Hero-Image-1-min-p-800.jpg 800w, /images/Hero-Image-1-min.jpg 960w" alt="Hero Image" class="hero-image is-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="genral-section">
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div data-w-id="18ad29f2-a8a1-739b-12f4-aa424c358b28" class="general-video-wrapper">
+              <div class="general-video-sticky-block">
+                <div class="general-video-block">
+                  <div data-poster-url="/videos/Generel-Section-Video-poster-00001.jpg" data-video-urls="/videos/Generel-Section-Video-transcode.mp4,/videos/Generel-Section-Video-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" data-w-id="6603a256-7f9b-7782-473e-261e76aaed4f" class="general-video w-background-video w-background-video-atom"><video id="6603a256-7f9b-7782-473e-261e76aaed4f-video" autoplay="" loop="" style="background-image:url(&quot;/videos/Generel-Section-Video-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                      <source src="/videos/Generel-Section-Video-transcode.mp4" data-wf-ignore="true">
+                      <source src="/videos/Generel-Section-Video-transcode.webm" data-wf-ignore="true">
+                    </video>
+                    <div class="general-video-text-block">
+                      <div class="general-video-text">Pixel Rich </div>
+                    </div>
+                    <div class="video-control-button-block"><noscript>
+                        <style is:inline>
+    [data-wf-bgvideo-fallback-img] {
+      display: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-wf-bgvideo-fallback-img] {
+        position: absolute;
+        z-index: -100;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }</style><img data-wf-bgvideo-fallback-img="true" src="/videos/Generel-Section-Video-poster-00001.jpg" alt="">
+                      </noscript>
+                      <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="6603a256-7f9b-7782-473e-261e76aaed4f-video" class="w-backgroundvideo-backgroundvideoplaypausebutton video-control-button w-background-video--control"><span class="video-control-state">
+                            <div class="video-control-text">Pause Reel</div>
+                          </span><span hidden="" class="video-control-state">
+                            <div class="video-control-text">Play Reel</div>
+                          </span></button></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="feature-section">
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div data-w-id="74dc5148-87f4-2076-632c-614774469a3f" class="feature-wrapper">
+              <div class="feature-sticky-block">
+                <div class="feature-content-block">
+                  <div class="feature-text-block">
+                    <div class="feature-name-block">
+                      <div class="feature-name is-1 show">Goal-Focused</div>
+                      <div class="feature-name is-2">Data‑Driven</div>
+                      <div class="feature-name is-3">Creative Team</div>
+                      <div class="feature-name is-4">Customized</div>
+                    </div>
+                    <div class="feature-number-block">
+                      <div class="feature-number is-1">01</div>
+                      <div class="feature-number is-2">02</div>
+                      <div class="feature-number is-3">03</div>
+                      <div class="feature-number is-4">04</div>
+                    </div>
+                  </div>
+                  <div class="feature-title-block">
+                    <h2 class="feature-title is-1">Result-Driven Strategies</h2>
+                    <h2 class="feature-title is-2">Data-Backed Decisions</h2>
+                    <h2 class="feature-title is-3">Experienced &amp; Creative Team</h2>
+                    <h2 class="feature-title is-4">Custom-Tailored Solutions</h2>
+                  </div>
+                </div>
+                <div class="feature-image-block"><img src="/images/Service-Image-1-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-1-min-p-500.jpg 500w, /images/Service-Image-1-min-p-800.jpg 800w, /images/Service-Image-1-min.jpg 960w" alt="Feature Image" class="feature-image is-1"><img src="/images/Service-Image-2-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-2-min-p-500.jpg 500w, /images/Service-Image-2-min-p-800.jpg 800w, /images/Service-Image-2-min.jpg 960w" alt="Feature Image" class="feature-image is-2"><img src="/images/Service-Image-3-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-3-min-p-500.jpg 500w, /images/Service-Image-3-min-p-800.jpg 800w, /images/Service-Image-3-min.jpg 960w" alt="Feature Image" class="feature-image is-3"><img src="/images/Service-Image-4-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-4-min-p-500.jpg 500w, /images/Service-Image-4-min-p-800.jpg 800w, /images/Service-Image-4-min.jpg 960w" alt="Feature Image" class="feature-image is-4"></div>
+              </div>
+              <div class="feature-sticky-block desktop-none">
+                <div class="feature-content-block">
+                  <div class="feature-text-block">
+                    <div class="feature-name-block">
+                      <div class="feature-name is-2 show">Data‑driven</div>
+                    </div>
+                    <div class="feature-number-block">
+                      <div class="feature-number is-2 show">02</div>
+                    </div>
+                  </div>
+                  <div class="feature-title-block">
+                    <h2 class="feature-title is-2 show">Data-Backed Decisions</h2>
+                  </div>
+                </div>
+                <div class="feature-image-block"><img src="/images/Service-Image-2-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-2-min-p-500.jpg 500w, /images/Service-Image-2-min-p-800.jpg 800w, /images/Service-Image-2-min.jpg 960w" alt="Feature Image" class="feature-image is-2 show"></div>
+              </div>
+              <div class="feature-sticky-block desktop-none">
+                <div class="feature-content-block">
+                  <div class="feature-text-block">
+                    <div class="feature-name-block">
+                      <div class="feature-name is-3 show">Creative Team</div>
+                    </div>
+                    <div class="feature-number-block">
+                      <div class="feature-number is-3 show">03</div>
+                    </div>
+                  </div>
+                  <div class="feature-title-block">
+                    <h2 class="feature-title is-3 show">Experienced &amp; Creative Team</h2>
+                  </div>
+                </div>
+                <div class="feature-image-block"><img src="/images/Service-Image-3-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-3-min-p-500.jpg 500w, /images/Service-Image-3-min-p-800.jpg 800w, /images/Service-Image-3-min.jpg 960w" alt="Feature Image" class="feature-image is-3 show"></div>
+              </div>
+              <div class="feature-sticky-block desktop-none">
+                <div class="feature-content-block">
+                  <div class="feature-text-block">
+                    <div class="feature-name-block">
+                      <div class="feature-name is-4 show">Customized</div>
+                    </div>
+                    <div class="feature-number-block">
+                      <div class="feature-number is-4 show">04</div>
+                    </div>
+                  </div>
+                  <div class="feature-title-block">
+                    <h2 class="feature-title is-4 show">Custom-Tailored Solutions</h2>
+                  </div>
+                </div>
+                <div class="feature-image-block"><img src="/images/Service-Image-1-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-1-min-p-500.jpg 500w, /images/Service-Image-1-min-p-800.jpg 800w, /images/Service-Image-1-min.jpg 960w" alt="Feature Image" class="feature-image is-1"><img src="/images/Service-Image-2-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-2-min-p-500.jpg 500w, /images/Service-Image-2-min-p-800.jpg 800w, /images/Service-Image-2-min.jpg 960w" alt="Feature Image" class="feature-image is-2"><img src="/images/Service-Image-3-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-3-min-p-500.jpg 500w, /images/Service-Image-3-min-p-800.jpg 800w, /images/Service-Image-3-min.jpg 960w" alt="Feature Image" class="feature-image is-3"><img src="/images/Service-Image-4-min.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Service-Image-4-min-p-500.jpg 500w, /images/Service-Image-4-min-p-800.jpg 800w, /images/Service-Image-4-min.jpg 960w" alt="Feature Image" class="feature-image is-4"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about-section">
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div class="about-wrapper">
+              <div class="about-content-block">
+                <div data-w-id="08cfa105-76d0-76cb-810f-de4f7b44d85e" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="about-title-block">
+                  <h2 class="about-title text-white">Turning Ideas Into Digital Growth Stories</h2>
+                </div>
+              </div>
+              <div data-w-id="364280c9-3f41-5050-5759-54a3073eaad8" class="about-stat-content-block">
+                <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="about-stat-single-block is-1">
+                  <div class="about-stat-block">
+                    <div data-w-id="91758a2a-fa71-d47d-959c-e173ac7d3990" class="stat-number-block">
+                      <div style="-webkit-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain lower-movement">
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain upper-movement">
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">2</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain lower-movement">
+                        <div class="stat-number">0</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">2</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain upper-movement">
+                        <div class="stat-number">6</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">2</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">0</div>
+                      </div>
+                      <div class="stat-number">+</div>
+                    </div>
+                    <p class="about-stat-text text-white">Satisfied Clients</p>
+                  </div>
+                </div>
+                <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="about-stat-single-block is-2">
+                  <div class="about-stat-block">
+                    <div data-w-id="9d46abb6-b868-d19b-a972-f9cc01422465" class="stat-number-block">
+                      <div style="-webkit-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain lower-movement">
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain upper-movement">
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">3</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain lower-movement">
+                        <div class="stat-number">0</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">2</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div class="stat-number">%</div>
+                    </div>
+                    <p class="about-stat-text text-white">Average Growth</p>
+                  </div>
+                </div>
+                <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="about-stat-single-block is-3">
+                  <div class="about-stat-block">
+                    <div data-w-id="2f56eba9-b6b5-c546-1ec5-3391bb3135fb" class="stat-number-block">
+                      <div style="-webkit-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain lower-movement">
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain upper-movement">
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-number">7</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div style="-webkit-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -400%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="stat-number-chain lower-movement">
+                        <div class="stat-number">0</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">2</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
+                      </div>
+                      <div class="stat-number">k+</div>
+                    </div>
+                    <p class="about-stat-text text-white">Social MediaReach</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="service-section">
+          <div class="section-gap">
+            <div class="w-layout-blockcontainer container-fluid w-container">
+              <div class="service-wrapper">
+                <SectionNav ids={["7337c578-27d0-8404-169b-8c7001c38724","7337c578-27d0-8404-169b-8c7001c3872d","7337c578-27d0-8404-169b-8c7001c38736"]} />
+                <div class="service-content-block">
+                  <div data-w-id="a71bf08a-fa84-49a4-0878-5bb82c5e8cb8" class="service-content-top">
+                    <div class="service-title-block">
+                      <h2 class="service-title">Grow with Our Expert Services</h2>
+                      <div class="text-overlay white"></div>
+                    </div>
+                    <div class="service-summary-content-block">
+                      <div class="service-summary-block">
+                        <p data-w-id="c6d17855-19e4-5864-e7e4-c8bbb1f2e3c2" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="service-summary">At PixelReach, we offer a full suite of digital marketing services designed to help your business grow smarter and faster. Whether you&#x27;re looking to boost visibility, drive traffic, or convert leads into loyal customers, our expert team delivers results-driven strategies customized to your goals.We specialize in SEO, PPC advertising, social media marketing, content creation, email campaigns, and brand strategy — all backed by data and driven by creativity.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sponsor-content-block">
+                    <div class="sponsor-title-block">
+                      <h2 class="section-title">Solutions That Drive Results</h2>
+                      <div class="text-overlay white"></div>
+                    </div>
+                    <SponsorLogos id="2418362c-bce6-158b-880c-22b71d5814b9" />
+                  </div>
+                  <div class="service-card-block">
+                    <ServiceList services={services} imageBlockId="cbc8450b-9524-46d8-39b4-bee990153df6" />
+                  </div>
+                  <div class="faq-wrapper">
+                    <div class="faq-heading-block">
+                      <h2 class="faq-title">Frequently Asked Questions</h2>
+                      <div data-w-id="47950463-66aa-e865-34ab-79d3c84532f1" style="-webkit-transform:translate3d(0%, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0%, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0%, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0%, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-overlay white"></div>
+                    </div>
+                    <div class="faq-content-block">
+                      <div data-hover="false" data-delay="1200" data-w-id="51ec7b1b-8ecf-e8a5-851b-9ee9cf727629" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="faq-single-item w-dropdown">
+                        <div class="faq-item-question-block w-dropdown-toggle">
+                          <div class="faq-item-question-block-inner">
+                            <div class="faq-item-question">What types of businesses do you work with?</div><img src="/images/FAQ-Arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform-style:preserve-3d" alt="FAQ Item Arrow" class="faq-item-arrow">
+                          </div>
+                        </div>
+                        <nav class="faq-item-ans-block w-dropdown-list">
+                          <div style="height:0px" class="faq-item-ans-block-inner">
+                            <p class="faq-item-answar">We partner with businesses of all sizes from ambitious startups to growing brands like eCommerce, real estate, tech, and healthcare. If you want to grow online, we’re here to make it happen.</p>
+                          </div>
+                        </nav>
+                      </div>
+                      <div data-hover="false" data-delay="1200" data-w-id="c490dbdc-3027-45be-25d3-b6435da1c7ce" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="faq-single-item w-dropdown">
+                        <div class="faq-item-question-block w-dropdown-toggle">
+                          <div class="faq-item-question-block-inner">
+                            <div class="faq-item-question">How long does it take to see results?</div><img src="/images/FAQ-Arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform-style:preserve-3d" alt="FAQ Item Arrow" class="faq-item-arrow">
+                          </div>
+                        </div>
+                        <nav class="faq-item-ans-block w-dropdown-list">
+                          <div style="height:0px" class="faq-item-ans-block-inner">
+                            <p class="faq-item-answar">We partner with businesses of all sizes from ambitious startups to growing brands like eCommerce, real estate, tech, and healthcare. If you want to grow online, we’re here to make it happen.</p>
+                          </div>
+                        </nav>
+                      </div>
+                      <div data-hover="false" data-delay="1200" data-w-id="a55af398-083f-abd3-0f41-f4e4e25f619c" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="faq-single-item w-dropdown">
+                        <div class="faq-item-question-block w-dropdown-toggle">
+                          <div class="faq-item-question-block-inner">
+                            <div class="faq-item-question">Do you offer custom marketing packages?</div><img src="/images/FAQ-Arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform-style:preserve-3d" alt="FAQ Item Arrow" class="faq-item-arrow">
+                          </div>
+                        </div>
+                        <nav class="faq-item-ans-block w-dropdown-list">
+                          <div style="height:0px" class="faq-item-ans-block-inner">
+                            <p class="faq-item-answar">We partner with businesses of all sizes from ambitious startups to growing brands like eCommerce, real estate, tech, and healthcare. If you want to grow online, we’re here to make it happen.</p>
+                          </div>
+                        </nav>
+                      </div>
+                      <div data-hover="false" data-delay="1200" data-w-id="bb72c00b-34b9-c5c4-4747-1b9035a41be9" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="faq-single-item last w-dropdown">
+                        <div class="faq-item-question-block w-dropdown-toggle">
+                          <div class="faq-item-question-block-inner">
+                            <div class="faq-item-question">Will I have a dedicated account manager?</div><img src="/images/FAQ-Arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0) rotateZ(0) skew(0, 0);transform-style:preserve-3d" alt="FAQ Item Arrow" class="faq-item-arrow">
+                          </div>
+                        </div>
+                        <nav class="faq-item-ans-block w-dropdown-list">
+                          <div style="height:0px" class="faq-item-ans-block-inner">
+                            <p class="faq-item-answar">We partner with businesses of all sizes from ambitious startups to growing brands like eCommerce, real estate, tech, and healthcare. If you want to grow online, we’re here to make it happen.</p>
+                          </div>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="testimonial-section">
+          <div class="w-layout-blockcontainer container-fluid w-container">
+            <div class="testimonial-wrapper">
+              <div data-w-id="ed8a19b8-727b-ccad-e5f8-496fb0cf019c" class="testimonial-heading-block">
+                <div class="testimonial-title-block">
+                  <h2 class="testimonial-title">What Our Clients Say</h2>
+                </div>
+              </div>
+              <div data-w-id="15f378bf-1722-5446-0571-bb98b72fae8b" class="testimonial-content-block">
+                <div class="testimonial-sticky-block">
+                  <div class="testimonial-image-cube"><img src="/images/Testimonial-Image-5-1.jpg" loading="lazy" sizes="(max-width: 556px) 100vw, 556px" srcset="/images/Testimonial-Image-5-1-p-500.jpg 500w, /images/Testimonial-Image-5-1.jpg 556w" alt="Testimonial Image" class="testimonial-right-image"><img src="/images/Testimonial-Image-2-2.jpg" loading="lazy" sizes="(max-width: 540px) 100vw, 540px" srcset="/images/Testimonial-Image-2-2-p-500.jpg 500w, /images/Testimonial-Image-2-2.jpg 540w" alt="Testimonial Image" class="testimonial-top-image"><img src="/images/Testimonial-Image-6.jpg" loading="lazy" sizes="(max-width: 556px) 100vw, 556px" srcset="/images/Testimonial-Image-6-p-500.jpg 500w, /images/Testimonial-Image-6.jpg 556w" alt="Testimonial Image" class="testimonial-back-image"><img src="/images/Testimonial-Image-1-1-min.jpg" loading="lazy" sizes="(max-width: 540px) 100vw, 540px" srcset="/images/Testimonial-Image-1-1-min-p-500.jpg 500w, /images/Testimonial-Image-1-1-min.jpg 540w" alt="Testimonial Image" class="testimonial-bottom-image"><img src="/images/Testimonial-Image-3-2.jpg" loading="lazy" sizes="(max-width: 556px) 100vw, 556px" srcset="/images/Testimonial-Image-3-2-p-500.jpg 500w, /images/Testimonial-Image-3-2.jpg 556w" alt="Testimonial Image" class="testimonial-left-image"><img src="/images/Testimonial-Image-4-1-min.jpg" loading="lazy" sizes="(max-width: 540px) 100vw, 540px" srcset="/images/Testimonial-Image-4-1-min-p-500.jpg 500w, /images/Testimonial-Image-4-1-min.jpg 540w" alt="Testimonial Image" class="testimonial-front-image"><img src="/images/Testimonial-Image-1-min.jpg" loading="lazy" sizes="(max-width: 541px) 100vw, 541px" srcset="/images/Testimonial-Image-1-min-p-500.jpg 500w, /images/Testimonial-Image-1-min.jpg 541w" alt="Testimonial Image" class="testimonial-relative-image"></div>
+                  <div data-w-id="ef5e7d82-368b-c2ff-ee58-9b8734b80296" class="testimonial-text-block">
+                    <div class="testimonial-text-slide-block">
+                      <div class="testimonial-individual-text-block is-1">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">01</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Emily Roberts</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-2">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">02</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Emily Davis</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-3">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">03</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">James Miller</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-4">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">04</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Olivia Wilson</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-5">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">05</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Ethan Brown</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-6">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">06</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Jacob King</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="testimonial-text-slide-block is-mobile">
+                      <div class="testimonial-individual-text-block is-1">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">01</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Emily Roberts</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-2">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">02</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Emily Davis</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-3">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">03</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">James Miller</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-4">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">04</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Olivia Wilson</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-5">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">05</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Ethan Brown</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-individual-text-block is-6">
+                        <div class="testimonial-slide-number-block">
+                          <div class="testimonial-slide-number text-white mobile-black">06</div>
+                        </div>
+                        <div class="testimonial-slide-title-block">
+                          <h3 class="testimonial-slide-title text-white mobile-black">Jacob King</h3>
+                        </div>
+                        <div class="testimonial-slide-summary-block">
+                          <p class="testimonial-slide-summary text-white mobile-black">PixelReach helped us scale our ad campaigns and triple our leads in just two months. Their strategy and communication are top-notch.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+</Base>

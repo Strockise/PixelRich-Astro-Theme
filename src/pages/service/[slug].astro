@@ -1,0 +1,37 @@
+---
+import { render } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import { getServices } from '@/lib/content';
+import { HIDDEN_BELOW } from '@/lib/ix';
+
+export async function getStaticPaths() {
+  const services = await getServices();
+  return services.map((service) => ({ params: { slug: service.id }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const { data } = service;
+const { Content } = await render(service);
+---
+
+<Base wfPage="6ac88618bf614c70ada7f1c9" title={data.title} fullTitle description={data.metaDescription} image={data.imageOne.src}>
+  <div class="main-wrapper">
+    <section class="service-details-section">
+      <div class="breadcrumb-hero-gap is-2">
+        <div class="w-layout-blockcontainer container-default w-container">
+          <div class="service-wrapper">
+            <div class="service-details-content-block">
+              <div data-w-id="63691653-ab08-6f45-4367-55b13d554a76" style={HIDDEN_BELOW} class="service-details-title-block">
+                <h1 class="service-details-title">{data.title}</h1>
+              </div>
+              <div data-w-id="b7fc6322-a5da-8919-81b5-d0a1f45a0700" style={HIDDEN_BELOW} class="service-main-image-block"><img src={data.imageOne.src} loading="lazy" alt={data.imageOne.alt} sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.3229370117188px" srcset={data.imageOne.srcset} class="service-main-image"></div>
+              <div data-w-id="f00c7a27-ce95-7e84-6203-24010e101d41" style={HIDDEN_BELOW} class="service-details-block">
+                <div class="service-details-text w-richtext"><Content /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

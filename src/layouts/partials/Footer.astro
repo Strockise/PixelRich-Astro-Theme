@@ -1,0 +1,60 @@
+---
+import config from '@/config/config.json';
+import menu from '@/config/menu.json';
+import { isCurrent, resolveMenuUrl } from '@/lib/content';
+
+const { pathname } = Astro.url;
+const { site, footer } = config;
+const year = new Date().getFullYear();
+
+const columns = await Promise.all(
+  menu.footer.map((column) =>
+    Promise.all(column.map(async (link) => ({ ...link, url: await resolveMenuUrl(link.url) }))),
+  ),
+);
+
+// The marquee repeats its two phrases so the loop animation never shows a gap.
+const marquee = ['Let’s Grow Your', 'Brand Together', 'Let’s Grow Your', 'Brand Together'];
+---
+
+<section class="footer-section">
+  <div data-w-id="44a96820-e064-ccf4-8692-a85df6d520df" class="footer-marquee-block">
+    {[0, 1].map((copy) => (
+      <div class="marquee-content-block" aria-hidden={copy === 1 ? 'true' : undefined}>
+        {marquee.map((text) => (
+          <>
+            <div class="footer-marquee-text">{text}</div>
+            <div class="footer-marquee-icon">
+              <div class="footer-arrow-icon w-embed"><svg viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12.8205 71.2325C13.5766 73.5406 16.0605 74.7987 18.3686 74.0426L55.9802 61.7215C58.2883 60.9655 59.5464 58.4815 58.7903 56.1735C58.0342 53.8654 55.5502 52.6073 53.2422 53.3634L19.8096 64.3154L8.8576 30.8829C8.10152 28.5748 5.61756 27.3167 3.30952 28.0728C1.00148 28.8289 -0.256625 31.3129 0.499456 33.6209L12.8205 71.2325ZM51.3008 2.14062L47.3777 0.153609L13.0765 67.8765L16.9996 69.8635L20.9227 71.8505L55.2239 4.12764L51.3008 2.14062Z" fill="currentColor"></path>
+                </svg></div>
+            </div>
+          </>
+        ))}
+      </div>
+    ))}
+    <a href={menu.cta.url} aria-label="Contact us" class="marquee-content-link-block w-inline-block"></a>
+  </div>
+  <div class="w-layout-blockcontainer container-default w-container">
+    <div class="footer-wrapper">
+      <div class="footer-link-block">
+        {columns.map((column) => (
+          <div class="footer-link-column">
+            {column.map((link) => {
+              const active = isCurrent(link.url, pathname);
+              return (
+                <a href={link.url} aria-current={active ? 'page' : undefined} class={active ? 'footer-link w--current' : 'footer-link'}>{link.name}</a>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      <div class="footer-logo-block"><img src={site.footer_logo} loading="lazy" alt={site.title} class="footer-logo">
+        <div class="footer-bottom">
+          <div class="copyright-text">Copyright © {year} <a href="/" class="copyright-link-text">{site.title}</a> Powered by <a href={footer.powered_by_url} class="copyright-link-text">{footer.powered_by_label}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

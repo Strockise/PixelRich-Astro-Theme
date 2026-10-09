@@ -1,0 +1,65 @@
+{
+  "main": [
+    { "name": "Home", "url": "/" },
+    { "name": "About", "url": "/about/" },
+    { "name": "Service", "url": "/service/" },
+    { "name": "blog", "url": "/blog/" }
+  ],
+  "dropdown": {
+    "name": "Pages",
+    "groups": [
+      {
+        "title": "Pages",
+        "links": [
+          { "name": "Home", "url": "/" },
+          { "name": "About", "url": "/about/" },
+          { "name": "Service", "url": "/service/" },
+          { "name": "Blog", "url": "/blog/" },
+          { "name": "Contact ", "url": "/contact/" }
+        ]
+      },
+      {
+        "title": "Utility",
+        "links": [
+          { "name": "Style Guide", "url": "/style-guide/" },
+          { "name": "404 Page", "url": "/404/" }
+        ]
+      },
+      {
+        "title": "Cms",
+        "links": [
+          { "name": "Service Details", "url": "cms:service" },
+          { "name": "Blog Details", "url": "cms:blog" }
+        ]
+      }
+    ]
+  },
+  "cta": { "name": "contact us", "url": "/contact/" },
+  "section_nav": [
+    { "number": "01", "name": "Home", "url": "/" },
+    { "number": "02", "name": "About", "url": "/about/" },
+    { "number": "03", "name": "Blog", "url": "/blog/" },
+    { "number": "04", "name": "Contact", "url": "/contact/" }
+  ],
+  "footer": [
+    [
+      { "name": "/Home", "url": "/" },
+      { "name": "/About", "url": "/about/" },
+      { "name": "/Service", "url": "/service/" },
+      { "name": "/Blog", "url": "/blog/" }
+    ],
+    [
+      { "name": "/Blog Details", "url": "cms:blog" },
+      { "name": "/Service Details", "url": "cms:service" },
+      { "name": "/Contact", "url": "/contact/" },
+      { "name": "/Style guide", "url": "/style-guide/" }
+    ],
+    [
+      { "name": "/404 Page", "url": "/404/" }
+    ]
+  ],
+  "cms_samples": {
+    "service": "seo-optimization",
+    "blog": "digital-marketing-tips-trends-strategies"
+  }
+}

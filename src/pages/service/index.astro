@@ -1,0 +1,50 @@
+---
+import Base from '@/layouts/Base.astro';
+import SectionNav from '@/layouts/components/SectionNav.astro';
+import SponsorLogos from '@/layouts/components/SponsorLogos.astro';
+import ServiceList from '@/layouts/components/ServiceList.astro';
+import { getServices } from '@/lib/content';
+
+const services = await getServices();
+---
+
+<Base wfPage="6ac88618bf614c70ada7f1cb" title="Service">
+  <div class="main-wrapper">
+    <section class="service-hero-section">
+      <div class="breadcrumb-hero-gap">
+        <div class="w-layout-blockcontainer container-default w-container">
+          <div class="service-hero-wrapper">
+            <div class="service-hero-content-block">
+              <div class="service-hero-text-block">
+                <h1 class="page-intro">Grow Your Brand</h1>
+                <div class="text-overlay white"></div>
+              </div>
+              <div class="service-hero-image-block"><img class="service-hero-image" src="/images/Service-Hero-Image.jpg" alt="Service Hero Image" style="-webkit-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 60px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 737px" data-w-id="1044593d-6b4c-d57f-6daf-93615d749207" loading="lazy" srcset="/images/Service-Hero-Image-p-500.jpg 500w, /images/Service-Hero-Image.jpg 737w"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="service-section">
+      <div class="section-gap">
+        <div class="w-layout-blockcontainer container-fluid w-container">
+          <div class="service-wrapper">
+            <SectionNav ids={["2c20ab34-ae54-00b3-3bed-3d472eb2b3a9","2c20ab34-ae54-00b3-3bed-3d472eb2b3b2","2c20ab34-ae54-00b3-3bed-3d472eb2b3bb"]} />
+            <div class="service-content-block">
+              <div class="sponsor-content-block">
+                <div class="service-section-title-block">
+                  <h2 class="service-section-title">Solutions That Drive Results</h2>
+                  <div class="text-overlay white"></div>
+                </div>
+                <SponsorLogos id="9f4c1f8a-8f75-6991-4b96-83d0952adc34" />
+              </div>
+              <div class="service-card-block">
+                <ServiceList services={services} imageBlockId="9f4c1f8a-8f75-6991-4b96-83d0952adc51" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>
