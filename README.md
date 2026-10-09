@@ -2,6 +2,10 @@
 
 PixelRich is a bold digital marketing agency theme for Astro, with scroll animations, a sticky feature showcase, an animated testimonial cube and smooth scrolling. Services and blog posts are managed in [Strapi](https://strapi.io) (see [`strapi/`](strapi/)).
 
+**Live demo:** https://pixelrich-astro-theme.vercel.app
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FStrockise%2FPixelRich-Astro-Theme)
+
 ## Pages
 
 | Route | Content |
@@ -17,10 +21,9 @@ PixelRich is a bold digital marketing agency theme for Astro, with scroll animat
 
 ## Getting started
 
-Requires Node.js 22.12 or later and a running Strapi instance with content (see [`strapi/README.md`](strapi/README.md)).
+Requires Node.js 22.12 or later.
 
 ```bash
-cp .env.example .env    # set STRAPI_URL
 npm install
 npm run dev             # http://localhost:4321
 npm run build           # static site in dist/
@@ -28,25 +31,33 @@ npm run preview
 npm run check           # type check
 ```
 
+The theme works straight away with its demo content. To manage services and blog posts in Strapi, start the CMS (see [`strapi/README.md`](strapi/README.md)), then:
+
+```bash
+cp .env.example .env    # set STRAPI_URL, e.g. http://localhost:1337
+```
+
 | Variable | Description |
 | --- | --- |
-| `STRAPI_URL` | Strapi base URL, default `http://localhost:1337` |
+| `STRAPI_URL` | Strapi base URL. When unset, the site uses the bundled demo content (`strapi/data/seed.json`, images in `public/images/demo/`) |
 | `STRAPI_API_TOKEN` | Optional read-only API token, only needed when the Strapi Public role can't read the content |
+| `SITE_URL` | Optional public URL for canonical links and the sitemap (defaults to the Vercel domain, then `site.base_url`) |
 
-Content is fetched at build time with a Content Layer loader (`src/content.config.ts`). The build fails with a clear message when Strapi is unreachable. Rebuild the site, for example from a Strapi webhook, after publishing content.
+Content is fetched at build time with a Content Layer loader (`src/content.config.ts`). With `STRAPI_URL` set, the build fails with a clear message when Strapi is unreachable. Rebuild the site after publishing content, for example from a Strapi webhook calling your host's deploy hook.
 
 ## Project structure
 
 ```text
 public/
-  images/, videos/        Template assets
+  images/, videos/        Template assets (images/demo/: demo service and blog images)
   js/                     Webflow runtime (navbar, dropdowns, tabs, interactions), jQuery, GSAP
 src/
   config/
     config.json           Site name, logos, SEO defaults, contact form endpoint, footer credits
     menu.json             Header, dropdown, section and footer navigation
     social.json           Contact page social links
-  content.config.ts       Strapi collections (services, blogPosts)
+  content.config.ts       Collections (services, blogPosts) from Strapi or the demo content
+strapi/                   Strapi 5 CMS (content types, MCP server, seed script)
   layouts/
     Base.astro            HTML shell, fonts, scripts, smooth scroll
     partials/             Header, Footer, SeoMeta
@@ -61,7 +72,7 @@ src/
 
 ## Customisation
 
-- **Site settings and SEO:** `src/config/config.json`. Set `site.base_url` to your domain for canonical URLs and the sitemap.
+- **Site settings and SEO:** `src/config/config.json`. Set `site.base_url` (or `SITE_URL`) to your domain for canonical URLs and the sitemap.
 - **Navigation:** `src/config/menu.json`. `cms:service` and `cms:blog` link to a sample detail page (`cms_samples`, otherwise the newest entry).
 - **Contact form:** set `contact_form.action` to a form endpoint (Formspree, Basin, Getform, your API). The form posts with `Accept: application/json` and shows the template's success or error message. Without an endpoint, the success message is shown without sending anything.
 - **Styles:** `src/styles/pixelrich-astro-theme.webflow.css` holds the theme styles, with colours and fonts as CSS variables at the top.

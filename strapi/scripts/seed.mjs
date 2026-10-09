@@ -17,6 +17,8 @@ import { fileURLToPath } from 'node:url';
 import { createMcpClient } from './lib/mcp.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// Demo images are shared with the Astro theme, which shows them when no Strapi URL is set.
+const demoImages = path.resolve(root, '..', 'public', 'images', 'demo');
 try {
   process.loadEnvFile(path.join(root, '.env'));
 } catch {
@@ -43,7 +45,7 @@ async function uploadImage({ file, alt }) {
   if (match) return match.id;
 
   const form = new FormData();
-  const buffer = await readFile(path.join(root, 'data', 'uploads', file));
+  const buffer = await readFile(path.join(demoImages, file));
   form.append('files', new Blob([buffer], { type: 'image/jpeg' }), file);
   form.append('fileInfo', JSON.stringify({ name: file, alternativeText: alt }));
   const res = await fetch(`${url}/upload`, {

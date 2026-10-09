@@ -36,7 +36,7 @@ The client can then list, create, update, publish and unpublish services and blo
 
 ## Demo content
 
-`data/seed.json` and `data/uploads/` contain the theme's demo services and blog posts. Load them with the Admin token from above, while Strapi is running:
+`data/seed.json` and the images in `../public/images/demo/` contain the theme's demo services and blog posts (the Astro site also shows them when no `STRAPI_URL` is set). Load them with the Admin token from above, while Strapi is running:
 
 ```bash
 STRAPI_ADMIN_TOKEN=<token> npm run seed

@@ -24,7 +24,10 @@ interface StrapiListResponse<T> {
   meta: { pagination: { page: number; pageCount: number } };
 }
 
-const baseUrl = STRAPI_URL.replace(/\/+$/, '');
+const baseUrl = (STRAPI_URL ?? '').replace(/\/+$/, '');
+
+/** True when STRAPI_URL is set. Without it the theme builds with its bundled demo content. */
+export const hasStrapi = baseUrl !== '';
 
 /** Resolves upload URLs: local uploads are relative, cloud providers return absolute URLs. */
 export function mediaUrl(url: string): string {
