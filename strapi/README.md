@@ -11,6 +11,8 @@ Services are listed newest first (by creation date). Blog posts are sorted by `d
 
 ## Getting started
 
+Run these commands in the `strapi/` folder:
+
 ```bash
 cp .env.example .env   # then replace every "tobemodified" secret
 npm install
@@ -52,4 +54,4 @@ The Astro theme is static: it reads Strapi at build time. To publish content cha
 
 ## Deployment
 
-Any Node host that supports Strapi works, as does [Strapi Cloud](https://cloud.strapi.io). For production, use PostgreSQL or MySQL (`DATABASE_CLIENT` and related variables in `.env.example`) and an upload provider such as S3 or Cloudinary if the server's disk is not persistent. The Astro theme handles absolute media URLs from cloud providers.
+Any Node host that supports Strapi works, as does [Strapi Cloud](https://cloud.strapi.io). The CMS lives in the `strapi/` folder of the theme repository, so set the project's base (root) directory to `strapi` when you deploy from Git. For production, use PostgreSQL or MySQL (`DATABASE_CLIENT` and related variables in `.env.example`) and an upload provider such as S3 or Cloudinary if the server's disk is not persistent. The Astro theme handles absolute media URLs from cloud providers.
